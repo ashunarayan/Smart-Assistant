@@ -2,6 +2,8 @@
   "name": "smart-assistant-backend",
   "version": "1.0.0",
   "description": "Intelligent assistant backend with LLM and MCP integration",
+  "type": "commonjs",
+
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

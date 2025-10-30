@@ -1,5 +1,8 @@
-// Mock Summarize tool (calls GPT, here just returns a mock)
-exports.execute = async ({ text }) => {
-  // Simulate summarization
+// tools/summarizeTool.js
+async function execute({ text }) {
+  // Simulate summarization (mock GPT call)
+  console.log(" Summarizing text...");
   return { summary: `Summary of: ${text}` };
-};
+}
+
+module.exports = { execute };
