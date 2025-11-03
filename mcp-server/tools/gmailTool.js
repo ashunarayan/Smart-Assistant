@@ -67,9 +67,10 @@ oAuth2Client.setCredentials({
 
 async function execute({ to, subject, body }) {
   try {
-    console.log("🔹 Step 1: Getting access token...");
+    console.log(" Step 1: Getting access token...");
     const accessToken = await oAuth2Client.getAccessToken();
-    console.log("✅ Access Token received.");
+    console.log("Access Token Object:");
+
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -83,7 +84,7 @@ async function execute({ to, subject, body }) {
       },
     });
 
-    console.log("🔹 Step 2: Sending email...");
+    console.log(" Step 2: Sending email...");
     const mailOptions = {
       from: "Ashu (MCP Server) <sriashu0504@gmail.com>",
       to,
@@ -92,12 +93,12 @@ async function execute({ to, subject, body }) {
     };
 
     const result = await transporter.sendMail(mailOptions);
-    console.log("✅ Email sent successfully!");
+    console.log(" Email sent successfully!");
     console.log(result);
 
     return { status: "sent", to, subject };
   } catch (error) {
-    console.error("❌ Detailed Gmail send error:");
+    console.error(" Detailed Gmail send error:");
     console.error("Error message:", error.message);
     console.error("Error stack:", error.stack);
 
@@ -110,3 +111,44 @@ async function execute({ to, subject, body }) {
 }
 
 module.exports = { execute };
+
+
+
+// const nodemailer = require("nodemailer");
+// require("dotenv").config();
+
+// async function execute({ to, subject, body }) {
+//   try {
+//     console.log(" Step 1: Creating transporter...");
+
+//     const transporter = nodemailer.createTransport({
+//       service: "gmail",
+//       auth: {
+//         user: process.env.EMAIL_USER,
+//         pass: process.env.EMAIL_PASS, 
+//       },
+//     });
+
+//     console.log(" Transporter ready. Sending email...");
+
+//     const mailOptions = {
+//       from: `Ashu (Smart Assistant) <${process.env.EMAIL_USER}>`,
+//       to,
+//       subject,
+//       text: body,
+//     };
+
+//     const result = await transporter.sendMail(mailOptions);
+//     console.log(" Email sent successfully!");
+//     console.log(result.response);
+
+//     return { status: "sent", to, subject };
+//   } catch (error) {
+//     console.error(" Detailed Gmail send error:");
+//     console.error("Error message:", error.message);
+//     console.error("Error stack:", error.stack);
+//     return { error: "Failed to send email" };
+//   }
+// }
+
+// module.exports = { execute };  

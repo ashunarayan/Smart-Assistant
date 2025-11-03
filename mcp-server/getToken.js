@@ -2,7 +2,7 @@ require("dotenv").config();
 console.log("Loaded ENV:", process.env.GOOGLE_CLIENT_ID);
 const { google } = require("googleapis");
 const readline = require("readline");
-const { exec } = require("child_process"); // add this line
+const { exec } = require("child_process"); 
 
 const oAuth2Client = new google.auth.OAuth2(
   process.env.GOOGLE_CLIENT_ID,
@@ -39,7 +39,7 @@ rl.question("Paste the authorization code here: ", async (code) => {
 
     if (tokens.refresh_token) {
       console.log(
-        "\n🎯 Save this line in your .env file:\nGOOGLE_REFRESH_TOKEN=" +
+        "\n Save this line in your .env file:\nGOOGLE_REFRESH_TOKEN=" +
           tokens.refresh_token
       );
     } else {
