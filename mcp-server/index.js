@@ -6,7 +6,7 @@ dotenv.config();
 const gmailTool = require("./tools/gmailTool");
 const searchTool = require("./tools/searchTool");
 const summarizeTool = require("./tools/summarizeTool");
-
+const weatherTool = require("./tools/weatherTool");
 const app = express();
 app.use(express.json());
 
@@ -14,6 +14,7 @@ const tools = {
   gmail_tool: gmailTool,
   search_tool: searchTool,
   summarize_tool: summarizeTool,
+  weather_tool: weatherTool,
 };
 
 app.post("/execute", async (req, res) => {
