@@ -3,7 +3,7 @@ const pool = require('../config/db.js');
 const passport=require("passport") ;
 const { Strategy:GoogleStrategy }=require("passport-google-oauth20");
 const dotenv= require("dotenv");
-const { findUserByGoogleId, createUser }=require("../models/userModel.js");
+const { findUserByGoogleId, createOrUpdateUser }=require("../models/userModel.js");
 dotenv.config();
 
 passport.use(
@@ -19,10 +19,9 @@ passport.use(
         const email = profile.emails[0].value;
         const name = profile.displayName;
 
-        let user = await findUserByGoogleId(googleId);
-        if (!user) {
-          user = await createUser(googleId, email, name);
-        }
+        // Save tokens to DB immediately upon login
+        const user = await createOrUpdateUser(googleId, email, name, accessToken, refreshToken);
+        
         return done(null, user);
       } catch (err) {
         console.error("Error in Google Strategy:", err);

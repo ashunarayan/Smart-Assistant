@@ -5,7 +5,8 @@ const passport=require('./passport/passport.js');
 const dotenv = require('dotenv');
 dotenv.config();
 const authRoutes = require('./routes/authRoutes');
-
+const aiRoutes = require('./routes/aiRoutes');
+const ensureAuthenticated = require('./middleware/authMiddleware');
 app.use(express.json());
 app.use(
   session({
@@ -18,9 +19,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/auth', authRoutes);
 const aiRoutes = require('./routes/aiRoutes');
-app.use('/ai', aiRoutes);
-app.get("/dashboard",(req,res)=>{
-  if(!req.user) return res.redirect("/auth/google");
+app.use('/ai',ensureAuthenticated, aiRoutes);
+app.get("/dashboard",ensureAuthenticated,(req,res)=>{
   res.send(`Welcome ${req.user.name}`);
 });
 

@@ -4,14 +4,18 @@ const router = express.Router();
 
 // Initiate Google OAuth
 router.get("/google",
-  passport.authenticate("google", { scope: ["profile", "email"] })
+  passport.authenticate("google", { 
+    // Request Gmail permissions + standard profile data
+    scope: ["profile", "email", "https://www.googleapis.com/auth/gmail.send"], 
+    accessType: 'offline', // CRITICAL: Required to get the Refresh Token
+    prompt: 'consent'      // Forces Google to give a new refresh token every time (good for dev)
+  })
 );
-
 // Google OAuth callback
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "/login",
+    failureRedirect: "/",
     successRedirect: "/dashboard",
   })
 );
