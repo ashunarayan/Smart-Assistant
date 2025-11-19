@@ -18,7 +18,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/auth', authRoutes);
-const aiRoutes = require('./routes/aiRoutes');
 app.use('/ai',ensureAuthenticated, aiRoutes);
 app.get("/dashboard",ensureAuthenticated,(req,res)=>{
   res.send(`Welcome ${req.user.name}`);

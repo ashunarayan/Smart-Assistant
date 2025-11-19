@@ -1,6 +1,6 @@
 
 
--- 2. Create the new table with the token columns
+-- . Create the new table with the token columns
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
   google_id VARCHAR(255) UNIQUE NOT NULL,
