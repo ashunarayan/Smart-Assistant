@@ -1,5 +1,5 @@
 
-
+-- DROP TABLE IF EXISTS users;
 -- . Create the new table with the token columns
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
