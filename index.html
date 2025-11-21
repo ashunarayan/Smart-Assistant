@@ -1,0 +1,1762 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Smart Assistant Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#smart-assistant-backend-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Smart Assistant Documentation" class="md-header__button md-logo" aria-label="Smart Assistant Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Smart Assistant Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="cyan"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Smart Assistant Documentation" class="md-nav__button md-logo" aria-label="Smart Assistant Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Smart Assistant Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Achievements:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-backend-server-port-3000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Backend Server (Port 3000)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mcp-server-port-4000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. MCP Server (Port 4000)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technology-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Used:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Flow:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Files:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Agent Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Agent Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-reasoning-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Step Reasoning Process:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-backendcontrollersaicontrollerjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation (backend/controllers/aiController.js):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-prompt-backendservicesllmservicejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Prompt (backend/services/llmService.js):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-server-tool-execution-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server - Tool Execution Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MCP Server - Tool Execution Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-registry-mcp-serverindexjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Registry (mcp-server/index.js):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gmail-tool-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gmail Tool - Deep Dive
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gmail Tool - Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-solved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Solved:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Implementation:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-flow-for-gmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth Flow for Gmail:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Tool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weather-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather Tool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summarize-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summarize Tool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL Configuration:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-routes-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Routes (/auth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-routes-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Routes (/ai)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend .env:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server .env:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#project-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Executive Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-achievements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Achievements:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-backend-server-port-3000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Backend Server (Port 3000)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-mcp-server-port-4000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. MCP Server (Port 4000)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#technology-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technology Used:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Flow:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Files:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-agent-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Agent Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Agent Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-step-reasoning-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Step Reasoning Process:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-backendcontrollersaicontrollerjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Implementation (backend/controllers/aiController.js):
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-prompt-backendservicesllmservicejs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Prompt (backend/services/llmService.js):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mcp-server-tool-execution-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server - Tool Execution Engine
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="MCP Server - Tool Execution Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-registry-mcp-serverindexjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tool Registry (mcp-server/index.js):
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gmail-tool-deep-dive" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gmail Tool - Deep Dive
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gmail Tool - Deep Dive">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#challenge-solved" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Challenge Solved:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Implementation:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oauth-flow-for-gmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OAuth Flow for Gmail:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search Tool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weather-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Weather Tool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summarize-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summarize Tool
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgresql-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PostgreSQL Configuration:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-endpoints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Endpoints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Endpoints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#authentication-routes-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Routes (/auth)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-routes-ai" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Routes (/ai)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protected-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Protected Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend .env:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server-env" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server .env:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="smart-assistant-backend-documentation">Smart Assistant - Backend Documentation</h1>
+<h2 id="project-overview">Project Overview</h2>
+<p><strong>Project Name:</strong> Smart Assistant Backend System<br />
+<strong>Developer:</strong> [Ashutosh Narayan Srivastava]<br />
+<strong>Role:</strong> Backend Developer<br />
+<strong>Technology Stack:</strong> Node.js, Express.js, PostgreSQL, OAuth 2.0, OpenAI API<br />
+<strong>Date:</strong> 21November 2025</p>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p>The Smart Assistant Backend is an intelligent, multi-layered system that integrates Large Language Models (LLMs) with external tool execution capabilities. The system enables users to perform complex tasks through natural language prompts, such as sending emails, searching the web, and retrieving weather information—all secured with Google OAuth 2.0 authentication.</p>
+<h3 id="key-achievements">Key Achievements:</h3>
+<ul>
+<li><strong>Agentic AI Architecture</strong>: Implemented multi-step reasoning where LLM can chain multiple tools sequentially</li>
+<li><strong>Secure Authentication</strong>: Google OAuth 2.0 with session management and PostgreSQL user storage</li>
+<li><strong>Modular Design</strong>: Separation of concerns with MVC architecture and microservices pattern</li>
+<li><strong>Tool Orchestration</strong>: MCP (Model Context Protocol) server managing external integrations</li>
+<li><strong>Production-Ready</strong>: Error handling, logging, and environment configuration</li>
+</ul>
+<hr />
+<h2 id="system-architecture">System Architecture</h2>
+<p>The project consists of <strong>two main components</strong>:</p>
+<h3 id="1-backend-server-port-3000">1. <strong>Backend Server</strong> (Port 3000)</h3>
+<ul>
+<li>User authentication and session management</li>
+<li>LLM integration for decision-making</li>
+<li>Request routing and middleware protection</li>
+<li>Database operations</li>
+</ul>
+<h3 id="2-mcp-server-port-4000">2. <strong>MCP Server</strong> (Port 4000)</h3>
+<ul>
+<li>Tool execution engine</li>
+<li>External API integrations (Gmail, Search, Weather, Summarization)</li>
+<li>Isolated service for better security and scalability</li>
+</ul>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                         Frontend                             │
+│                    (Partner's Work)                          │
+└──────────────────────────┬──────────────────────────────────┘
+                           │ HTTP Requests
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    BACKEND SERVER (Port 3000)                │
+├─────────────────────────────────────────────────────────────┤
+│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐   │
+│  │   Routes     │──▶│ Controllers  │──▶│   Services   │   │
+│  │              │   │              │   │              │   │
+│  │ - /auth/*    │   │ aiController │   │ llmService   │   │
+│  │ - /ai        │   │ authCtrl     │   │              │   │
+│  └──────────────┘   └──────────────┘   └──────┬───────┘   │
+│                                                │           │
+│  ┌──────────────┐   ┌──────────────┐         │           │
+│  │  Middleware  │   │    Models    │         │           │
+│  │              │   │              │         │           │
+│  │ - Auth Check │   │ - User Model │         │           │
+│  │ - Passport   │   │              │         │           │
+│  └──────────────┘   └──────┬───────┘         │           │
+│                            │                 │           │
+│                            ▼                 ▼           │
+│                     ┌──────────────┐  ┌──────────────┐  │
+│                     │  PostgreSQL  │  │  OpenAI API  │  │
+│                     │   Database   │  │   (GPT-4o)   │  │
+│                     └──────────────┘  └──────┬───────┘  │
+└───────────────────────────────────────────────┼──────────┘
+                                                │
+                                                │ Tool Execution Request
+                                                ▼
+┌─────────────────────────────────────────────────────────────┐
+│                   MCP SERVER (Port 4000)                     │
+├─────────────────────────────────────────────────────────────┤
+│                     ┌──────────────┐                        │
+│                     │ Tool Router  │                        │
+│                     └──────┬───────┘                        │
+│                            │                                │
+│     ┌──────────────┬───────┴───────┬──────────────┐        │
+│     ▼              ▼               ▼              ▼        │
+│ ┌────────┐   ┌─────────┐   ┌──────────┐   ┌──────────┐   │
+│ │ Gmail  │   │ Search  │   │ Weather  │   │Summarize │   │
+│ │  Tool  │   │  Tool   │   │   Tool   │   │   Tool   │   │
+│ └───┬────┘   └────┬────┘   └─────┬────┘   └─────┬────┘   │
+│     │             │              │              │        │
+└─────┼─────────────┼──────────────┼──────────────┼────────┘
+      │             │              │              │
+      ▼             ▼              ▼              ▼
+┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐
+│  Gmail   │  │  Google  │  │ Weather  │  │ OpenAI   │
+│   API    │  │  Search  │  │   API    │  │Summarize │
+└──────────┘  └──────────┘  └──────────┘  └──────────┘
+</code></pre>
+<hr />
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>smart-assistant/
+│
+├── backend/                          # Main Backend Server
+│   ├── server.js                     # Application Entry Point
+│   │
+│   ├── config/                       # Configuration Files
+│   │   ├── db.js                     # PostgreSQL Connection Pool
+│   │   └── passport.js               # (Legacy - Not Used)
+│   │
+│   ├── controllers/                  # Request Handlers
+│   │   ├── aiController.js           # AI Prompt Processing Logic
+│   │   └── authController.js         # Authentication Controllers
+│   │
+│   ├── middleware/                   # Express Middleware
+│   │   └── authMiddleware.js         # Protected Route Guard
+│   │
+│   ├── models/                       # Database Models
+│   │   └── userModel.js              # User CRUD Operations
+│   │
+│   ├── routes/                       # API Route Definitions
+│   │   ├── aiRoutes.js               # /ai endpoint
+│   │   └── authRoutes.js             # /auth/* endpoints
+│   │
+│   ├── services/                     # Business Logic Layer
+│   │   └── llmService.js             # OpenAI Integration
+│   │
+│   ├── passport/                     # Passport.js Configuration
+│   │   └── passport.js               # Google OAuth Strategy
+│   │
+│   ├── migration/                    # Database Setup
+│   │   ├── 001_create_user_table.sql # SQL Schema
+│   │   └── runMigration.js           # Migration Runner
+│   │
+│   ├── package.json                  # Backend Dependencies
+│   └── .env                          # Environment Variables
+│
+└── mcp-server/                       # Tool Execution Server
+    ├── index.js                      # MCP Server Entry Point
+    ├── test.js                       # Testing Utilities
+    │
+    ├── tools/                        # Individual Tool Modules
+    │   ├── gmailTool.js              # Email Sending via Gmail API
+    │   ├── searchTool.js             # Web Search (Google Custom Search)
+    │   ├── weatherTool.js            # Weather Information
+    │   └── summarizeTool.js          # Text Summarization
+    │
+    ├── package.json                  # MCP Dependencies
+    └── .env                          # MCP Environment Variables
+</code></pre>
+<hr />
+<h2 id="authentication-system">Authentication System</h2>
+<h3 id="technology-used">Technology Used:</h3>
+<ul>
+<li><strong>Passport.js</strong> with Google OAuth 2.0 Strategy</li>
+<li><strong>Express-Session</strong> for session persistence</li>
+<li><strong>PostgreSQL</strong> for user data storage</li>
+</ul>
+<h3 id="authentication-flow">Authentication Flow:</h3>
+<pre><code>1. User clicks &quot;Login with Google&quot;
+   ↓
+2. Redirected to Google OAuth consent screen
+   ↓
+3. User grants permissions (profile, email, gmail.send)
+   ↓
+4. Google redirects back with authorization code
+   ↓
+5. Passport exchanges code for Access + Refresh Tokens
+   ↓
+6. User data stored/updated in PostgreSQL
+   ↓
+7. Session created and stored server-side
+   ↓
+8. User redirected to /dashboard
+</code></pre>
+<h3 id="key-files">Key Files:</h3>
+<p><strong><code>backend/passport/passport.js</code></strong>
+- Configures Google OAuth 2.0 strategy
+- Handles user serialization/deserialization
+- Stores refresh tokens for Gmail API access</p>
+<p><strong><code>backend/middleware/authMiddleware.js</code></strong>
+- Protects routes requiring authentication
+- Returns 401 for unauthorized API calls
+- Redirects to login for web requests</p>
+<p><strong><code>backend/models/userModel.js</code></strong>
+- Database operations for user management
+- <code>findUserByGoogleId()</code> - Retrieve user
+- <code>createOrUpdateUser()</code> - Upsert user with tokens</p>
+<h3 id="database-schema">Database Schema:</h3>
+<pre><code class="language-sql">CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    google_id VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    name VARCHAR(255),
+    access_token TEXT,
+    refresh_token TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+</code></pre>
+<hr />
+<h2 id="ai-agent-architecture">AI Agent Architecture</h2>
+<h3 id="overview">Overview:</h3>
+<p>The AI system uses <strong>OpenAI's GPT-4o-mini</strong> as an intelligent orchestrator that can:
+1. Understand natural language requests
+2. Decide which tools to use
+3. Chain multiple tools together for complex tasks
+4. Provide conversational responses</p>
+<h3 id="multi-step-reasoning-process">Multi-Step Reasoning Process:</h3>
+<pre><code class="language-javascript">// Example: &quot;Search for gravity and email the result to john@example.com&quot;
+
+Step 1: LLM decides → Use search_tool with query=&quot;gravity&quot;
+        ↓
+Step 2: Search tool returns results
+        ↓
+Step 3: LLM receives search results
+        ↓
+Step 4: LLM decides → Use gmail_tool with search results in body
+        ↓
+Step 5: Email sent successfully
+        ↓
+Step 6: LLM returns final response to user
+</code></pre>
+<h3 id="implementation-backendcontrollersaicontrollerjs">Implementation (<code>backend/controllers/aiController.js</code>):</h3>
+<pre><code class="language-javascript">// Conversation Memory Approach
+let messages = [{ role: &quot;user&quot;, content: prompt }];
+let steps = 0;
+const MAX_STEPS = 5;
+
+while (steps &lt; MAX_STEPS) {
+    // 1. Ask LLM what to do next
+    const llmResult = await llmService.decideAction(messages);
+
+    // 2. If LLM wants to respond, we're done
+    if (llmResult.action === 'respond') {
+        return res.json({ result: llmResult.parameters.response });
+    }
+
+    // 3. Execute the tool
+    const toolOutput = await axios.post('http://localhost:4000/execute', {
+        tool: llmResult.action,
+        parameters: executionParams
+    });
+
+    // 4. Add tool result to conversation memory
+    messages.push({ 
+        role: &quot;assistant&quot;, 
+        content: JSON.stringify(llmResult) 
+    });
+    messages.push({ 
+        role: &quot;user&quot;, 
+        content: `Tool Output: ${toolOutput}` 
+    });
+
+    steps++;
+}
+</code></pre>
+<h3 id="system-prompt-backendservicesllmservicejs">System Prompt (<code>backend/services/llmService.js</code>):</h3>
+<p>The LLM is guided by a carefully crafted system prompt that:
+- Lists available tools and their parameters
+- Defines the decision-making process
+- Enforces JSON output format
+- Encourages multi-step reasoning</p>
+<hr />
+<h2 id="mcp-server-tool-execution-engine">MCP Server - Tool Execution Engine</h2>
+<h3 id="purpose">Purpose:</h3>
+<p>The MCP (Model Context Protocol) Server is a <strong>separate microservice</strong> that handles all external integrations. This separation provides:
+- <strong>Security</strong>: Sensitive API keys isolated from main backend
+- <strong>Scalability</strong>: Can be deployed independently
+- <strong>Maintainability</strong>: Easy to add new tools</p>
+<h3 id="tool-registry-mcp-serverindexjs">Tool Registry (<code>mcp-server/index.js</code>):</h3>
+<pre><code class="language-javascript">const tools = {
+  gmail_tool: gmailTool,
+  search_tool: searchTool,
+  summarize_tool: summarizeTool,
+  weather_tool: weatherTool,
+};
+
+app.post(&quot;/execute&quot;, async (req, res) =&gt; {
+  const { tool, parameters } = req.body;
+  const selectedTool = tools[tool];
+  const result = await selectedTool.execute(parameters);
+  res.json({ tool, result });
+});
+</code></pre>
+<hr />
+<h2 id="gmail-tool-deep-dive">Gmail Tool - Deep Dive</h2>
+<h3 id="challenge-solved">Challenge Solved:</h3>
+<p>Sending emails on behalf of authenticated users using OAuth 2.0 tokens.</p>
+<h3 id="technical-implementation">Technical Implementation:</h3>
+<p><strong>Method 1 (Nodemailer)</strong> - Initially attempted but had token issues<br />
+<strong>Method 2 (Gmail REST API)</strong> - Current implementation </p>
+<pre><code class="language-javascript">// Using Google's Gmail API v1
+const gmail = google.gmail({ version: 'v1', auth: oAuth2Client });
+
+// Construct MIME email
+const messageParts = [
+  `From: &lt;${auth.userEmail}&gt;`,
+  `To: &lt;${to}&gt;`,
+  `Subject: ${utf8Subject}`,
+  `Content-Type: text/plain; charset=utf-8`,
+  ``,
+  body
+];
+
+// Base64URL encode
+const encodedMessage = Buffer.from(message.join('\n'))
+  .toString('base64')
+  .replace(/\+/g, '-')
+  .replace(/\//g, '_');
+
+// Send via API
+await gmail.users.messages.send({
+  userId: 'me',
+  requestBody: { raw: encodedMessage }
+});
+</code></pre>
+<h3 id="oauth-flow-for-gmail">OAuth Flow for Gmail:</h3>
+<ol>
+<li>User logs in via Google OAuth</li>
+<li>Backend requests <code>gmail.send</code> scope</li>
+<li>Refresh token stored in database</li>
+<li>When sending email, refresh token exchanged for access token</li>
+<li>Access token used to authenticate Gmail API request</li>
+</ol>
+<hr />
+<h2 id="search-tool">Search Tool</h2>
+<p><strong>API Used:</strong> Google Custom Search API</p>
+<pre><code class="language-javascript">// Returns top search results for any query
+const response = await axios.get(&quot;https://www.googleapis.com/customsearch/v1&quot;, {
+  params: {
+    key: process.env.GOOGLE_API_KEY,
+    cx: process.env.GOOGLE_SEARCH_ENGINE_ID,
+    q: query,
+  },
+});
+
+return results.map(item =&gt; ({
+  title: item.title,
+  link: item.link,
+  snippet: item.snippet,
+}));
+</code></pre>
+<p><strong>Use Case:</strong> "Search for the latest news on AI" → Returns structured search results</p>
+<hr />
+<h2 id="weather-tool">Weather Tool</h2>
+<p><strong>API Used:</strong> Weather service (implementation details in <code>weatherTool.js</code>)</p>
+<p><strong>Use Case:</strong> "What's the weather in Delhi?" → Returns current weather data</p>
+<hr />
+<h2 id="summarize-tool">Summarize Tool</h2>
+<p><strong>Technology:</strong> OpenAI GPT models for text summarization</p>
+<p><strong>Use Case:</strong> "Summarize this article: [long text]" → Returns concise summary</p>
+<hr />
+<h2 id="database-architecture">Database Architecture</h2>
+<h3 id="postgresql-configuration">PostgreSQL Configuration:</h3>
+<p><strong>File:</strong> <code>backend/config/db.js</code></p>
+<pre><code class="language-javascript">const pool = new Pool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASS,
+  port: process.env.DB_PORT || 5432,
+});
+</code></pre>
+<h2 id="api-endpoints">API Endpoints</h2>
+<h3 id="authentication-routes-auth">Authentication Routes (<code>/auth</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+<th>Authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/auth/google</code></td>
+<td>GET</td>
+<td>Initiate Google OAuth login</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>/auth/google/callback</code></td>
+<td>GET</td>
+<td>OAuth callback handler</td>
+<td>None</td>
+</tr>
+<tr>
+<td><code>/auth/logout</code></td>
+<td>GET</td>
+<td>Destroy session and logout</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai-routes-ai">AI Routes (<code>/ai</code>)</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+<th>Authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/ai</code></td>
+<td>POST</td>
+<td>Process natural language prompt</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Body:</strong></p>
+<pre><code class="language-json">{
+  &quot;prompt&quot;: &quot;Search for Python tutorials and email results to me&quot;
+}
+</code></pre>
+<p><strong>Response:</strong></p>
+<pre><code class="language-json">{
+  &quot;success&quot;: true,
+  &quot;action&quot;: &quot;respond&quot;,
+  &quot;result&quot;: &quot;I've searched for Python tutorials and sent the results to your email.&quot;
+}
+</code></pre>
+<h3 id="protected-routes">Protected Routes</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Description</th>
+<th>Authentication</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/dashboard</code></td>
+<td>GET</td>
+<td>User dashboard</td>
+<td>Required</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="environment-configuration">Environment Configuration</h2>
+<h3 id="backend-env">Backend <code>.env</code>:</h3>
+<pre><code class="language-env"># Server Configuration
+PORT=3000
+
+# Database
+DB_USER=postgres
+DB_HOST=localhost
+DB_NAME=smart_assistant
+DB_PASS=yourpassword
+DB_PORT=5432
+
+# Session
+SESSION_SECRET=your_random_secret_key
+
+# Google OAuth
+GOOGLE_CLIENT_ID=your_client_id
+GOOGLE_CLIENT_SECRET=your_client_secret
+REDIRECT_URI=http://localhost:3000/auth/google/callback
+
+# OpenAI
+OPENAI_API_KEY=sk-your-openai-api-key
+</code></pre>
+<h3 id="mcp-server-env">MCP Server <code>.env</code>:</h3>
+<pre><code class="language-env"># Server Configuration
+PORT=4000
+
+# Google Services
+GOOGLE_CLIENT_ID=your_client_id
+GOOGLE_CLIENT_SECRET=your_client_secret
+REDIRECT_URI=http://localhost:3000/auth/google/callback
+GOOGLE_API_KEY=your_google_api_key
+GOOGLE_SEARCH_ENGINE_ID=your_search_engine_id
+
+# OpenAI (for summarization)
+OPENAI_API_KEY=sk-your-openai-api-key
+</code></pre>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": [], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
